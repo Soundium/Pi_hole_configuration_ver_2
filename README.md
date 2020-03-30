@@ -231,6 +231,7 @@ https://raw.githubusercontent.com/CHEF-KOCH/WebRTC-tracking/master/WebRTC.txt
 ```
 cd /opt/
 sudo git clone https://github.com/Soundium/Pi_hole_Whitelist.git
+sudo chmod +x /opt/Pi_hole_Whitelist/scripts/whitelist.sh
 ```
 - Make the script to run the script at 1 AM every day.
 
@@ -271,6 +272,7 @@ CTRL + X then Y and Enter
 - Give the rights.
 ```
 sudo chmod +x /opt/Pi_hole_youtube_blocklist/scripts/temp.sh
+sudo chmod +x /opt/Pi_hole_youtube_blocklist/scripts/youtube-ads.sh
 ```
 - Add scripts to crontab to run at 1 AM and 5 AM every day.
 
