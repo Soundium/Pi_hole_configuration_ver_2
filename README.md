@@ -299,7 +299,7 @@ require_dnssec = true
 require_nofilter = false
 cache = false   (we will use the Pi-Hole cache)
 ```
-Scroll down to the bottom of the TOML file. For **server_name** add the same server name you used above. For the 'via' servers, review the relay list here, and pick a couple that suite your needs. I used servers near my house. You may want to use servers in a different country or have other unique requirements. 
+Scroll down to the bottom of the TOML file. For **server_name** add the same server name you used above. For the 'via' servers, review the relay list <a href="https://github.com/DNSCrypt/dnscrypt-resolvers/blob/master/v2/relays.md">here</a>, and pick a couple that suite your needs. I used servers near my house. You may want to use servers in a different country or have other unique requirements. 
 
 ```
 routes = [
