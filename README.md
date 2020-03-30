@@ -303,7 +303,7 @@ Scroll down to the bottom of the TOML file. For **server_name** add the same ser
 
 ```
 routes = [
-     { server_name='adguard-dns', via=['anon-cs-de2', 'anon-cs-nl'] },
+     { server_name='cloudflare', via=['anon-cs-de2', 'anon-cs-nl'] },
  ]
 ```
 Save the configuration file and exit nano.
