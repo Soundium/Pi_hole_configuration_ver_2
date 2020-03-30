@@ -181,8 +181,6 @@ https://blocklist.site/app/dl/tracking
 https://blocklist.site/app/dl/fraud
 https://blocklist.site/app/dl/phishing
 https://v.firebog.net/hosts/AdguardDNS.txt
-https://1hos.cf
-https://zeustracker.abuse.ch/blocklist.php?download=domainblocklist
 https://hosts-file.net/grm.txt
 https://reddestdream.github.io/Projects/MinimalHosts/etc/MinimalHostsBlocker/minimalhosts
 https://raw.githubusercontent.com/StevenBlack/hosts/master/data/KADhosts/hosts
@@ -198,6 +196,32 @@ https://raw.githubusercontent.com/Perflyst/PiHoleBlocklist/master/SmartTV.txt
 https://s3.amazonaws.com/lists.disconnect.me/simple_malvertising.txt
 https://www.malwaredomainlist.com/hostslist/hosts.txt
 https://dbl.oisd.nl/
+https://openphish.com/feed.txt
+http://sysctl.org/cameleon/hosts
+https://s3.amazonaws.com/lists.disconnect.me/simple_ad.txt
+https://s3.amazonaws.com/lists.disconnect.me/simple_tracking.txt
+https://hosts-file.net/ad_servers.txt
+https://www.squidblacklist.org/downloads/dg-ads.acl
+https://pgl.yoyo.org/adservers/serverlist.php?hostformat=nohtml
+https://ransomwaretracker.abuse.ch/downloads/RW_DOMBL.txt
+https://ransomwaretracker.abuse.ch/downloads/RW_URLBL.txt
+http://theantisocialengineer.com/AntiSocial_Blacklist_Community_V1.txt
+https://osint.bambenekconsulting.com/feeds/c2-dommasterlist-high.txt
+https://s3.amazonaws.com/lists.disconnect.me/simple_malware.txt
+https://isc.sans.edu/feeds/suspiciousdomains_High.txt
+https://mirror1.malwaredomains.com/files/justdomains
+https://mirror1.malwaredomains.com/files/immortal_domains.txt
+http://winhelp2002.mvps.org/hosts.txt
+https://www.stopforumspam.com/downloads/toxic_domains_whole.txt
+https://raw.githubusercontent.com/Dawsey21/Lists/master/main-blacklist.txt
+https://someonewhocares.org/hosts/hosts
+https://heuristicsecurity.com/dohservers.txt
+https://phishing.army/download/phishing_army_blocklist_extended.txt
+https://raw.githubusercontent.com/oneoffdallas/dohservers/master/list.txt
+https://raw.githubusercontent.com/CHEF-KOCH/Audio-fingerprint-pages/master/AudioFp.txt
+https://raw.githubusercontent.com/CHEF-KOCH/Canvas-fingerprinting-pages/master/Canvas.txt
+https://raw.githubusercontent.com/CHEF-KOCH/WebRTC-tracking/master/WebRTC.txt
+
 ```
 
 19. With all those blocked domains, there are a few we want whitelisted to prevent possible web surfing issues. So let's install whitelist script. Or don't whitelist anything until you run into a problem and then try to resolve it on the spot.
