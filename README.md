@@ -282,7 +282,7 @@ sudo mv linux-arm dnscrypt-proxy && cd dnscrypt-proxy
 sudo cp example-dnscrypt-proxy.toml dnscrypt-proxy.toml
 sudo nano dnscrypt-proxy.toml
 ```
-Under Global settings add one or more servers. You can use iOS app DNSCloak to sift through the plethora of servers you can use. For example, you can search for DNS servers that block ads, support doh (DNS over HTTPS), view locations, etc. I like Cloudflare DOH. You can also check out the public DNSCrypt server list here and pick one or more that fits your requirements. N
+Under Global settings add one or more servers. You can use iOS app DNSCloak to sift through the plethora of servers you can use. For example, you can search for DNS servers that block ads, support doh (DNS over HTTPS), view locations, etc. I like Cloudflare DOH. You can also check out the public DNSCrypt server list here and pick one or more that fits your requirements. 
 
 ```
 server_names = ['cloudflare']
@@ -299,7 +299,7 @@ require_dnssec = true
 require_nofilter = false
 cache = false   (we will use the Pi-Hole cache)
 ```
-Scroll down to the bottom of the TOML file. For **server_name** add the same server name you used above. For the 'via' servers, review the relay list here, and pick a couple that suite your needs. I used servers near my house. You may want to use servers in a different country or have other unique requirements. Note: If you want to use NextDNS.io service, you don't want to anonymize your queries, so don't configure this section.
+Scroll down to the bottom of the TOML file. For **server_name** add the same server name you used above. For the 'via' servers, review the relay list here, and pick a couple that suite your needs. I used servers near my house. You may want to use servers in a different country or have other unique requirements. 
 
 ```
 routes = [
