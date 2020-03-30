@@ -270,8 +270,61 @@ sudo Pi_hole_youtube_blocklist/scripts/youtube-ads.sh
 **NOTE** 
 If you used all of the block lists above, be prepared to troubleshoot apps or websites that don't work because of blocked domains. If you run across a non-functional site or app, review the Pi-Hole logs for blocked domains and try whitelisting one at a time and re-testing your site/app to see what fixes the problem.
 
-21. 
+21. We proceed with DNSCrypt installation. Enter the following commands to do a base DNSCrypt installation. Check the latest release <a href="https://github.com/DNSCrypt/dnscrypt-proxy/releases">here</a> and modify the wget and tar commands as needed to use the latest binary.
 
+```
+cd /opt
+
+sudo wget https://github.com/jedisct1/dnscrypt-proxy/releases/download/2.0.42/dnscrypt-proxy-linux_arm-2.0.42.tar.gz
+
+sudo tar -xf dnscrypt-proxy-linux_arm-2.0.31.tar.gz
+sudo mv linux-arm dnscrypt-proxy && cd dnscrypt-proxy
+sudo cp example-dnscrypt-proxy.toml dnscrypt-proxy.toml
+sudo nano dnscrypt-proxy.toml
+```
+Under Global settings add one or more servers. You can use iOS app DNSCloak to sift through the plethora of servers you can use. For example, you can search for DNS servers that block ads, support doh (DNS over HTTPS), view locations, etc. I like Cloudflare DOH. You can also check out the public DNSCrypt server list here and pick one or more that fits your requirements. N
+
+```
+server_names = ['cloudflare']
+```
+Under List of Local addresses change the port number to something you like, above 1024. I'm using 5350 in this example. Pi-Hole will be using port 53 (standard for DNS), so that's why we must use a custom port number for DNSCrypt.
+
+```
+listen_addresses = ['127.0.0.1:5350', '[::1]:5350']
+```
+
+Change the following:
+```
+require_dnssec = true   
+require_nofilter = false
+cache = false   (we will use the Pi-Hole cache)
+```
+Scroll down to the bottom of the TOML file. For **server_name** add the same server name you used above. For the 'via' servers, review the relay list here, and pick a couple that suite your needs. I used servers near my house. You may want to use servers in a different country or have other unique requirements. Note: If you want to use NextDNS.io service, you don't want to anonymize your queries, so don't configure this section.
+
+```
+routes = [
+     { server_name='adguard-dns', via=['anon-cs-de2', 'anon-cs-nl'] },
+ ]
+```
+Save the configuration file and exit nano.
+```
+CTRL + X then Y and Enter
+```
+
+22. Now we need to start the service and test it to make sure it's working before we configure Pi-Hole to use it.
+```
+sudo ./dnscrypt-proxy -service install
+sudo ./dnscrypt-proxy
+sudo ./dnscrypt-proxy -service start
+sudo systemctl status dnscrypt-proxy
+```
+The **sudo ./dnscrypt-proxy** command will provide detailed startup information and return any errors it encounters.  **sudo systemctl status dnscrypt-proxy** does the same for DNScrypt when it's started as a service. Both should have the same output, as shown below. If the Anonymized setting is properly configured those relay servers will be shown in the DNSCrypt output.
+
+To run a quick test that DNSCrypt can perform name resolution type:
+
+```
+./dnscrypt-proxy -resolve www.google.com
+```
 
 Next, we need to configure Pi-Hole to use this new functionality.
 
@@ -288,6 +341,7 @@ Like so:
 #server=1.1.1.1
 #server=1.0.0.1
 server=127.0.0.1#5350
+server=::1#5350
 server=/use-application-dns.net/
 ```
 Save the configuration file and exit nano.
