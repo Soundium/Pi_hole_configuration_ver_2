@@ -221,6 +221,7 @@ https://raw.githubusercontent.com/oneoffdallas/dohservers/master/list.txt
 https://raw.githubusercontent.com/CHEF-KOCH/Audio-fingerprint-pages/master/AudioFp.txt
 https://raw.githubusercontent.com/CHEF-KOCH/Canvas-fingerprinting-pages/master/Canvas.txt
 https://raw.githubusercontent.com/CHEF-KOCH/WebRTC-tracking/master/WebRTC.txt
+https://www.sunshine.it/blacklist.txt
 
 ```
 
