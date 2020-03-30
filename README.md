@@ -277,7 +277,7 @@ cd /opt
 
 sudo wget https://github.com/jedisct1/dnscrypt-proxy/releases/download/2.0.42/dnscrypt-proxy-linux_arm-2.0.42.tar.gz
 
-sudo tar -xf dnscrypt-proxy-linux_arm-2.0.31.tar.gz
+sudo tar -xf dnscrypt-proxy-linux_arm-2.0.42.tar.gz
 sudo mv linux-arm dnscrypt-proxy && cd dnscrypt-proxy
 sudo cp example-dnscrypt-proxy.toml dnscrypt-proxy.toml
 sudo nano dnscrypt-proxy.toml
