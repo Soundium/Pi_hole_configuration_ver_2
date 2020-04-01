@@ -255,7 +255,7 @@ sudo /opt/Pi_hole_Whitelist/scripts/whitelist.sh
 - Download scripts.
 ```
 cd /opt/
-git clone https://github.com/Soundium/Pi_hole_youtube_blocklist.git
+sudo git clone https://github.com/Soundium/Pi_hole_youtube_blocklist.git
 cd Pi_hole_youtube_blocklist/scripts
 ```
 - Add your APPID to temp.sh. 
